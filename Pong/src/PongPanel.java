@@ -13,13 +13,13 @@ import java.awt.Font;
 
 public class PongPanel extends JPanel implements ActionListener, KeyListener {
 
-	private final static Color BACKGROUND_COLOUR = Color.black;
+	private final static Color BACKGROUND_COLOUR = Color.WHITE;
 	private final static int TIMER_DELAY = 5;
 	GameState gameState = GameState.INITIALISING;
 	Ball ball;
 	Paddle paddle1, paddle2;
 	private static final int BALL_MOVEMENT_SPEED = 2;
-	private static final int POINTS_TO_WIN = 3;
+	private static final int POINTS_TO_WIN = 4;
 	int player1Score = 0, player2Score = 0;
 	Player gameWinner;
 	private final static int SCORE_TEXT_X = 100;
@@ -164,7 +164,7 @@ public class PongPanel extends JPanel implements ActionListener, KeyListener {
 		Graphics2D g2d = (Graphics2D) g.create();
 		Stroke dashed = new BasicStroke(3, BasicStroke.CAP_BUTT, BasicStroke.JOIN_BEVEL, 0, new float[]{9}, 0);
 		g2d.setStroke(dashed);
-		g2d.setPaint(Color.WHITE);
+		g2d.setPaint(Color.BLACK);
 		g2d.drawLine(getWidth() / 2, 0, getWidth() /2, getHeight());
 		g2d.dispose();
 	}
@@ -189,7 +189,7 @@ public class PongPanel extends JPanel implements ActionListener, KeyListener {
 	}
 	
 	
-	@Override
+	@Override 
 	public void keyTyped(KeyEvent event) {
 		// TODO Auto-generated method stub
 		
